@@ -1,4 +1,4 @@
-from models.imovel import *
+from models.realstates import *
 from services.csv_service import *
 
 valor_contrato = 2000
@@ -29,8 +29,8 @@ try:
             else:
                 print(f'\n{"="*30} Digite apenas opções corretas {"="*30}\n')
                 continue
-            apartamento = Apartamento(qtnd_quartos=quartos, garagem=garagem, crianca=crianca)
-            aluguel = apartamento.calcular_aluguel()
+            apartamento = Apartment(rooms=quartos, garage=garagem, kids=crianca)
+            aluguel = apartamento.calculate_budget()
             print('\n===== ORÇAMENTO ====='
                   '\nImóvel: Apartamento\n'
                   f'Quartos: {quartos}\n'
@@ -38,7 +38,7 @@ try:
                   f'\nOrçamento Total: {aluguel}\n'
                   f'Valor por mês: 12x de R$ {aluguel / 12:.2f}\n'
                   f'\nContrato:\n5x de R$ {parcelas}')
-            gerar_csv(aluguel, 'Apartamento')
+            gerar_csv(aluguel, 'Apartment')
             break
         elif escolha1 == '2':
             print('\n==== Você escolheu Casa ====\n')
@@ -51,8 +51,8 @@ try:
             else:
                 print(f'\n{"="*30} Digite apenas opções corretas {"="*30}\n')
                 continue
-            casa = Casa(qtnd_quartos=quartos, garagem=garagem)
-            aluguel = casa.calcular_aluguel()
+            casa = House(rooms=quartos, garage=garagem)
+            aluguel = casa.calculate_budget()
             print('\n===== ORÇAMENTO ====='
                   '\nImóvel: Casa\n'
                   f'Quartos: {quartos}\n'
@@ -60,7 +60,7 @@ try:
                   f'\nOrçamento Total: {aluguel}\n'
                   f'Valor por mês: 12x de R$ {aluguel / 12:.2f}\n'
                   f'\nContrato:\n5x de R$ {parcelas}')
-            gerar_csv(aluguel, 'Casa')
+            gerar_csv(aluguel, 'House')
             break
         elif escolha1 == '3':
             print('\n==== Você escolheu Estudio ====\n')
@@ -73,8 +73,8 @@ try:
             if garagem:
                 vagas = input('\nVocê tem direito a 2 vagas na garagem, gostaria de ter mais? (S | N): ').upper()
                 qtnd_vagas += (2 if vagas == 'N' else (int(input('Então, quantas vagas adicionais deseja: '))+2))
-            estudio = Estudio(vagas_garagem=qtnd_vagas)
-            aluguel = estudio.calcular_aluguel()
+            estudio = Studio(garage_spaces=qtnd_vagas)
+            aluguel = estudio.calculate_budget()
             print('\n===== ORÇAMENTO ====='
                   '\nImóvel: Estudio\n'
                   f'Garagem: {"Sim" if garagem else "Não"}\n'
@@ -82,7 +82,7 @@ try:
                   f'\nOrçamento Total: {aluguel}\n'
                   f'Valor por mês: 12x de R$ {aluguel / 12:.2f}\n'
                   f'\nContrato:\n5x de R$ {parcelas}')
-            gerar_csv(aluguel, 'Estudio')
+            gerar_csv(aluguel, 'Studio')
             break
         elif escolha1 == '0':
             print('\n===== Fim do programa =====')
