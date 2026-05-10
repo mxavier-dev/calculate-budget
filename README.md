@@ -67,13 +67,13 @@ calculate_budget/
 ├── main.py
 │
 ├── models/
-│   └── imovel.py
+│   └── realstates.py
 │
 ├── services/
 │   └── csv_service.py
 │
 ├── data/
-│   └── orcamentos.csv
+│   └── budgets.csv
 │
 └── README.md
 ```
