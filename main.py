@@ -35,7 +35,7 @@ try:
                   '\nImóvel: Apartamento\n'
                   f'Quartos: {quartos}\n'
                   f'Garagem: {"Sim" if garagem else "Não"}\n'
-                  f'\nOrçamento Total: {aluguel}\n'
+                  f'\nOrçamento Total: R$ {aluguel}\n'
                   f'Valor por mês: 12x de R$ {aluguel / 12:.2f}\n'
                   f'\nContrato:\n5x de R$ {parcelas}')
             gerar_csv(aluguel, 'Apartment')
@@ -57,7 +57,7 @@ try:
                   '\nImóvel: Casa\n'
                   f'Quartos: {quartos}\n'
                   f'Garagem: {"Sim" if garagem else "Não"}\n'
-                  f'\nOrçamento Total: {aluguel}\n'
+                  f'\nOrçamento Total: R$ {aluguel}\n'
                   f'Valor por mês: 12x de R$ {aluguel / 12:.2f}\n'
                   f'\nContrato:\n5x de R$ {parcelas}')
             gerar_csv(aluguel, 'House')
@@ -79,7 +79,7 @@ try:
                   '\nImóvel: Estudio\n'
                   f'Garagem: {"Sim" if garagem else "Não"}\n'
                   f'Vagas na garagem: {qtnd_vagas}\n'
-                  f'\nOrçamento Total: {aluguel}\n'
+                  f'\nOrçamento Total: R$ {aluguel}\n'
                   f'Valor por mês: 12x de R$ {aluguel / 12:.2f}\n'
                   f'\nContrato:\n5x de R$ {parcelas}')
             gerar_csv(aluguel, 'Studio')
